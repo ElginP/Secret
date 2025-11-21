@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow: hidden;
+  background-image: linear-gradient(to top, rgba(200, 0, 3, 0.7), rgba(255, 165, 0, 0.5)), url('bgpage1.jpg'), url('bgpage1trans.png'); /* Gambar asli Anda */
+  background-blend-mode: multiply, darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  pointer-events: none;
+    background: 
+      radial-gradient(circle at 0% 0%, rgba(0,0,0,0.7) 0%, transparent 40%), /*atas kiri*/
+      radial-gradient(circle at 100% 0%, rgba(0,0,0,0.7) 0%, transparent 40%), /*atas kanan*/
+      radial-gradient(circle at 0% 100%, rgba(0,0,0,0.7) 0%, transparent 40%), /*bawah kiri*/
+      radial-gradient(circle at 100% 100%, rgba(0,0,0,0.7) 0%, transparent 400px); /*bawah kanan*/
+}
+
+.hidden {
+  display: none !important; 
+}
+
+#loginFormContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  z-index: 1000; 
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.modal-box {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);  
+  -webkit-backdrop-filter: blur(15px); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 40px; 
+  border-radius: 20px; 
+  max-width: 350px;
+  width: 80%;
+  text-align: center;
+  color: #f0f0f0;
+  font-family: 'Times New Roman', serif; 
+}
+
+.modal-box h3 {
+  font-size: 1.5rem;
+  color: #ffb7c5; 
+  margin-bottom: 5px;
+}
+
+.modal-box p {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px; 
+    font-weight: 300;
+    color: #f0f0f0; 
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #ff69b4;
+}
+
+.floating-hearts::before,
+.floating-hearts::after {
+  content: "💕";
+  position: absolute;
+  animation: float 9s infinite ease-in-out;
+  font-size: 40px;
+  opacity: 0.4;
+}
+
+.floating-hearts::before {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.floating-hearts::after {
+  left: 70%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% { top: 100vh; opacity: 0; }
+  30% { opacity: 1; }
+  100% { top: -10vh; opacity: 0; }
+}
+
+.hero {
+  line-height: 12px;
+  text-align: center;
+  padding: 120px 10px;
+  font-size: 56px;
+}
+
+.hero2 {
+  margin-top: 270px;
+  text-align: center;
+  padding: -10px 40px;
+  color: #fefefe;
+  font-size: 16px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-family: "Great Vibes", cursive;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background-color: rgba(255, 105, 180, 0.3); /* Pink semi-transparan */
+  border-color: #ff69b480; /* Border pink sedikit lebih gelap */
+  margin-top: 40px;
+  padding: 14px 28px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  animation: pulse 1.6s infinite;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 95, 126, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(255, 95, 126, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 95, 126, 0); }
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.card a {
+  display: flex; 
+  gap: 20px;
+  text-decoration: none;
+  color: #f692d6dd;
+  font-size: lem;
+  font-weight: normal;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 15px 25px; 
+  color: #ff9fcfd9;
+  width: 260px;
+  height: 120px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card a:visited {
+  color:#f692d6dd;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-size: 14px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
